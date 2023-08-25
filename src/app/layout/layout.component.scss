@@ -1,0 +1,21 @@
+@import '../shared/styles/app/variables.scss';
+.feed-container {
+    position: fixed;
+    right: 0px;
+    top:0px;
+    bottom: 0;
+    width: 100%;
+    max-width: 380px; 
+    min-height: 100%; 
+    background-color: $neutral-0; 
+    z-index: 2000;
+    border: 1px solid $neutral-200;
+}
+.content-wrapper-full {
+    // max-width: calc(100% - 20px);
+    max-width: 100%;
+}
+
+.content-wrapper-feed {
+    max-width: calc(100% - 380px);
+  }

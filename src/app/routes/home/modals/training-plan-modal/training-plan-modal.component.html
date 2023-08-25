@@ -1,0 +1,55 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Ficha de Treino</h4>
+    <button type="button" class="close close-custom " aria-label="Close" (click)="bsModalRef.hide()"> 
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body p-0">
+    <div class="card-body p-0">
+        <div class="card-body  pl-4 pr-4">
+           <app-exercise (OnAdd)="onAddExercise($event)"></app-exercise>
+        </div>
+        <div class="row pl-4 pr-4">
+            <div class="col-12">
+               <div class="card card-default">
+                  <div class="card-header">Exercícios</div>
+                  <div class="card-body">
+                     <div class="table-responsive">
+                        <table class="table table-hover">
+                           <thead>
+                              <tr>
+                                 <th>Nome</th>
+                                 <th>Serie</th>
+                                 <th>Repetições</th>
+                                 <th>Peso</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr *ngFor="let i of exercises; let index = index" >
+                                 <td>{{i.name}}</td>
+                                 <td>{{i.sets}}</td>
+                                 <td>{{i.repetitions}}</td>
+                                 <td>{{i.weight}}</td>
+                                 <td>
+                                    <button class="btn btn-sm btn-danger m-1 btn-rounded" type="button" (click)="removeExercise(index)">
+                                       <em class="icon ion-ios-trash"></em>
+                                   </button>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- END row-->
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-labeled" (click)="submitForm()" [disabled]="exercises.length == 0"> 
+        <span class="btn-label">
+            <i class="ion-ios-save"></i>
+        </span><em>{{'SAVE'|translate}} </em>
+    </button>
+</div>

@@ -1,0 +1,45 @@
+<div class="card-custom card-body border-radius-10px mt-3">
+    <table class="wd-wide">
+        <tbody>
+            <tr>
+                <td class="wd-xs">
+                    <div class="px-2">
+                        <img class="img-fluid rounded thumb64" src="{{imgUrl}}" onerror="this.src='assets/img/icons/no-image-icon.svg'" alt="" />
+                    </div>
+                </td>
+                <td>
+                    <div class="px-2">
+                        <h4 class="mb-2">{{name}}</h4>
+                        <small class="text-muted">{{description}}</small>
+                    </div>
+                </td>
+                <td class="wd-sm  d-none d-lg-table-cell">
+                    <div class="px-2">
+                        <p class="m-0">Séries</p>
+                        <p class="text-muted">{{sets}}</p>
+                    </div>
+                </td>
+                <td class="wd-sm  d-none d-lg-table-cell">
+                    <div class="px-2">
+                        <p class="m-0">Repetições</p>
+                        <p class="text-muted">{{repetitions}}</p>
+                    </div>
+                </td>
+                <td class="wd-sm  d-none d-lg-table-cell">
+                    <div class="px-2">
+                        <p class="m-0">Carga</p>
+                        <p class="text-muted">{{weight}} KG</p>
+                    </div>
+                </td>
+                <td class="wd-sm d-none d-lg-table-cell" style="text-align: end;">
+                    <button class="btn btn-sm btn-danger m-1" type="button" (click)="delete()"
+                     title="{{ 'DELETE' | translate }}"
+                     [disabled]="!deleteEnabled"
+                     >
+                     <em class="icon ion-ios-trash"></em>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

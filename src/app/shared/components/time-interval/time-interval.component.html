@@ -1,0 +1,23 @@
+
+  <div class="title_config w-100 p-0 m-0 mt-3">
+      <strong>{{'GENERAL_SETTINGS'|translate}}</strong>
+      <div class="list-group box_padding mt-3">
+        <div class="list-group-item">
+          <div class="media align-items-center">
+            <div class="align-self-start mr-1">
+               <em class="fa-2x mr-2 fas fa-clock"></em>
+            </div>
+            <div class="media-body">
+               <small class="m-0">{{'DASHBORAD_RELOAD'| translate }}</small>
+            </div>
+         </div>
+        </div>
+        <div class="list-group-item">
+          <input type="range" name="range" [(ngModel)]="ratingValue" [min]="0" step="10"  max="60" (change)="change(ratingValue)">   
+        </div>
+        <div class="list-group-item">
+          <small *ngIf="ratingValue == 0">{{'NO_RELOAD'| translate }}</small> 
+          <small *ngIf="ratingValue > 0">{{ratingValue}} {{'SECONDS'| translate}}</small> 
+        </div>
+    </div>
+  </div>

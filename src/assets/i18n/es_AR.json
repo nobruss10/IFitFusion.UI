@@ -1,0 +1,23 @@
+{
+    "TITLE_LOGIN": "IFitFusion",
+    "FORGOT_YOUR_PASSWORD": "Olvidé mi contraseña",
+    "REMEMBER_ME": "Recuérdame",
+    "TITLE": "Título",
+    "DESCRIPTION_LOGIN": "¡Bienvenido de vuelta! Accede a tu cuenta iniciando sesión con la información proporcionada durante el registro.",
+    "PASSWORD": "Contraseña",
+    "EMAIL": "Correo electrónico",
+    "LOGIN": "Iniciar sesión",
+    "TITLE_FORGOT_YOUR_PASSWORD": "Olvidé mi contraseña",
+    "DESCRIPTION_FORGOT_YOUR_PASSWORD": "Ingresa tu correo electrónico registrado y te enviaremos un enlace de recuperación.",
+    "SEND_EMAIL": "Enviar correo electrónico",
+    "SEND": "Enviar",
+    "REQUIRED_FIELD": "Campo obligatorio",
+    "INVALID_EMAIL": "Correo electrónico inválido",
+    "NAME": "Nombre",
+    "DESCRIPTION_HOME_DASHBOARD": "Bienvenido de vuelta,",
+    "MENU_EXIT": "Salir",
+    "LANG_br": "Portugués",
+    "LANG_en": "Inglés",
+    "LANG_es_AR": "Español",
+    "NOT_ITEM":"No hay elementos registrados"
+}

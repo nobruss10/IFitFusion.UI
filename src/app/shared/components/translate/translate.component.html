@@ -1,0 +1,35 @@
+<div class="select-none">
+  <li class="nav-item dropdown dropdown-list" dropdown>
+    <div>
+      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret text-dark" dropdownToggle
+        style="display: flex; align-items: center; padding-left: 0px;">
+        <img [src]="'assets/img/'+this.currentLanguage+'.png'" class="country_logo mr-2" />
+        <small class="text-bold">
+          {{this.showCurrentLanguage}}
+          <em class="fa-1x ml-1 fas fa-caret-down text-dark"></em>
+        </small>
+      </a>
+    </div>
+    <div *dropdownMenu class="dropdown-menu padding-drop-tranlate dropdown-menu-right animated flipInX ">
+      <div class="dropdown-item">
+        <div class="list-group" *ngIf="!!currentLanguage">
+          <div class="list-group-item without-border-bottom" *ngFor="let lang of allLanguages">
+            <div class="media">
+              <div class="align-self-start mr-1">
+                <img [src]="'assets/img/'+lang.code+'.png'" class="country_logo position-align" />
+              </div>
+              <div class="media-body" (click)="setLan(lang.code)">
+                <div class="clearfix">
+                  <p class="float-left">{{'LANG_'+lang.code | translate}}</p>
+                  <span *ngIf="lang.code == currentLanguage">
+                    <em class="fa-1x ml-1 fas fa-check check-lang"></em>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>

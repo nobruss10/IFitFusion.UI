@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 12px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(157 157 157 / 35%) !important;
+}
+app-warranty-card{
+  height: 100%;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #8b8b8b !important;
+    border-radius: 20px !important;
+    border: 3px solid #c1c1c1 !important;
+}
+
+  body{
+    zoom: 0.75;
+  }
+  // @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  // body{
+  //   zoom: 0.75;
+  // }
+  // }

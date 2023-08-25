@@ -1,0 +1,95 @@
+<section class="heigth-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 px-0 login-bg">
+                <img src="assets/img/logo-login.png" alt="Login image" class="w-100 vh-100">
+            </div>
+            <div class="col-sm-6 text-black">
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 vh-100">
+                    <form [formGroup]="valForm" style="width: 24rem; margin: 0 auto;" (submit)="submitForm()" *ngIf="currentAction == 'login'; else recover">
+                        <h2 class="fw-normal mb-0">{{'TITLE_LOGIN' | translate}} </h2>
+                        <p>{{'DESCRIPTION_LOGIN' | translate}}</p>
+                        <div class="form-group mb-22">
+                            <div class="input-div">
+                                <ion-icon name="mail" class="icon left"></ion-icon>
+                                <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Email"/>
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">
+                                {{'REQUIRED_FIELD' | translate}}
+                            </div>
+                            <div class="text-danger"
+                                *ngIf="valForm.controls['email'].hasError('email') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">
+                                {{'INVALID_EMAIL' | translate}}</div>
+                        </div>
+                        <div class="form-group mb-16">
+                            <div class="input-div">
+                                <ion-icon name="lock-closed" class="icon left"></ion-icon>
+                                <input type="{{showPassword ? 'text' : 'password' }}" name="password"
+                                    class="form-control form-control-lg" formControlName="password" placeholder="{{'PASSWORD' | translate}}"/>
+                                <!-- <em class="{{showPassword ? 'icon ion-ios-eye eye right' : 'icon ion-ios-eye-off eye right' }}"
+                                    (click)="showPasswordField()"></em> -->
+                            </div>
+
+                            <div class="text-danger"
+                                *ngIf="valForm.controls['password'].hasError('required') && (valForm.controls['password'].dirty || valForm.controls['password'].touched)">
+                                {{'REQUIRED_FIELD' | translate}}
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-35">
+                            <div class="col-xl-6">
+                                <div class="checkbox c-checkbox d-flex">
+                                    <div class="round">
+                                        <input type="checkbox" checked id="checkbox" formControlName="remember"/>
+                                        <label for="checkbox"></label>
+                                      </div>
+                                    <label class="remember-me mb-0">
+                                        {{'REMEMBER_ME' | translate}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div >
+                            <button class="btn btn-login btn-lg btn-block" type="submit"
+                                [disabled]="!valForm.valid">{{'LOGIN' | translate}}</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<ng-template #recover>
+    <form [formGroup]="valFormRecover" style="width: 24rem; margin: 0 auto;" (submit)="submitForm()">
+        <h2 class="fw-normal mb-0" >{{'FORGOT_YOUR_PASSWORD' | translate }}
+        </h2>
+        <p>
+           {{'DESCRIPTION_FORGOT_YOUR_PASSWORD' | translate}}
+        </p>
+
+        <div class="form-group mb-22">
+            <div class="input-div">
+                <ion-icon name="mail" class="icon left"></ion-icon>
+                <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Email"/>
+            </div>
+            <div class="text-danger"
+                *ngIf="valFormRecover.controls['email'].hasError('required') && (valFormRecover.controls['email'].dirty || valFormRecover.controls['email'].touched)">
+                {{'REQUIRED_FIELD' | translate}}</div>
+            <div class="text-danger"
+                *ngIf="valFormRecover.controls['email'].hasError('email') && (valFormRecover.controls['email'].dirty || valFormRecover.controls['email'].touched)">
+                {{'INVALID_EMAIL' | translate}}</div>
+        </div>
+
+        <div >
+            <button class="btn btn-login btn-lg btn-block" type="submit"
+                [disabled]="!valFormRecover.valid">{{'SEND_EMAIL' | translate}}</button>
+        </div>
+    </form>
+
+</ng-template>

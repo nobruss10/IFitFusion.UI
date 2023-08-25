@@ -1,0 +1,31 @@
+<div *ngIf="user$ | async as user" class="select-none">
+   <li class="nav-item dropdown dropdown-list " dropdown>
+      <div class="row top-box mb-20" dropdownToggle>
+         <div class="col-10 text-right mt-2">
+             <small class="text-lg">{{'DESCRIPTION_HOME_DASHBOARD' | translate}}  {{ user.name }}</small>
+         </div>
+
+         <div class="col-2 text-right">
+            <a class="dropdown-toggle dropdown-toggle-nocaret text-dark" >
+               <div class="ml-auto userIcon">
+                  <img src="{{user.profilePhotoUrl}}" onerror="this.src='assets/img/icons/default-user-icon.svg'" alt="Image">
+               </div>
+            </a>
+         </div>
+     </div>
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-center">
+         <ion-icon></ion-icon>
+         <div class="list-group">
+            <a class="list-group-item p-0" [routerLink]="'/user/edit-user'">
+               <img class="align-self-center rounded-circle thumb32" src="{{user.profilePhotoUrl}}" onerror="this.src='assets/img/icons/default-user-icon.svg'" alt="Image">
+               {{ user.name }}
+            </a>
+            <hr>
+            <a class="list-group-item p-0" (click)="logout()">
+               <ion-icon name="exit"></ion-icon>
+               {{'MENU_EXIT' | translate}}
+            </a>
+         </div>
+      </div>
+   </li>
+</div>

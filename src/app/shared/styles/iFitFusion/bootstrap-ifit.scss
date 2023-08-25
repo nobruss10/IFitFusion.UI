@@ -1,0 +1,155 @@
+@import '../app/variables.scss';
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../../../../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../../../assets/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('../../../../assets/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../../../../assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../../../../assets/fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Light';
+    src: url('../../../../assets/fonts/Inter-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Medium';
+    src: url('../../../../assets/fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter-Bold';
+    src: url('../../../../assets/fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Poppins-Regular', sans-serif;
+}
+
+.text-over-eliipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.content-text {
+    font-size: 0.58rem;
+    font-family: 'Poppins-Regular';
+    color: #F3F4F6;
+}
+
+.select-none {  
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom-modal-refactory{
+    max-width: 100%!important;
+    margin-left: 102px!important;
+    margin-right: 20px!important;
+    width: calc(100% - 122px);
+    .modal-content{
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+.btn-arrow {
+    float: left;
+    color: #000;
+    border: none;
+    background-color: transparent;
+    margin-right: 17px;
+    margin-left: 8px;
+    background-image: url('../../../../assets/img/icons/arrow-icon.svg');
+    background-repeat: no-repeat;
+    min-height: 27px;
+    min-width: 27px;
+}
+
+.flotTip {
+    z-index: 2000 !important;
+}
+
+.sort-column {
+    cursor: pointer;
+}
+
+.sort-column .asc::after {
+    content: '\25b2';
+    margin-right: 5px;
+    font-size: 80%;
+    color: $neutral-400;
+}
+
+.sort-column .desc::after {
+    content: '\25bc';
+    margin-right: 5px;
+    font-size: 80%;
+    color: $neutral-400;
+}
+
+.not-selectable {  
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.overlay-div {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.66;
+    transition: .5s ease;
+    background-color: rgba(0,0,0,.5) !important;
+}
+
+.disable-element {
+    pointer-events: none;
+    opacity: 0.55;
+}
+
+.toast-top-center {
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+    width: 68vw;
+}

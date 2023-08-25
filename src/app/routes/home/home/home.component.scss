@@ -1,0 +1,56 @@
+@import "../../../shared/styles/bootstrap/_functions.scss";
+@import "../../../shared/styles/bootstrap/_variables.scss";
+@import "../../../shared/styles/bootstrap/_mixins";
+@import '../../../shared/styles/app/variables.scss';
+
+.home-container {
+    position: relative;
+    margin: 0 auto;
+    margin-left: 0px;
+}
+
+.title-portal {
+    font-family: 'Poppins-Medium';
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: $neutral-400;
+
+}
+
+.perfil {
+    position: absolute;
+    right: 36px;
+}
+
+.borda-cards {
+    border-radius: 20px;
+}
+
+.title-card {
+    font-family: "Poppins-Medium";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: $neutral-400;
+}
+
+.btns{
+    width: 271px;
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    padding: 1px;
+    text-align: end;
+}
+
+.btn-rounded{
+    border-radius: 100%;
+}
+
+@media only screen and (max-width: 777px) {
+    .home-container {
+        max-width: 100%;
+    }
+}

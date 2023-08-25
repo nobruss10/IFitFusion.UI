@@ -1,0 +1,36 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner" id="fixedmenu">
+    <div class="logo pt-28" style="margin-bottom: 144px;">
+        <a class="navbar-brand py-0">
+            <div class="brand-logo-collapsed mx-auto">
+                <img class="img-fluid" src="assets/img/logo-single.svg" alt="App Logo" />
+            </div>
+        </a>
+    </div>
+    <nav class="sidebar d-flex" sidebar-anyclick-close="" [class.show-scrollbar]="settings.getLayoutSetting('asideScrollbar')">
+        <ul class="sidebar-nav my-0">
+
+            <li [ngClass]="{'nav-heading': item.heading}" [routerLinkActive]="['active']" *ngFor='let item of menuItems; let i=index' [style]="item.style" >
+                <span *ngIf="item.heading">{{(item.translate | translate) || item.text | translate}}</span>
+                <!-- external links -->
+                <a href *ngIf="!item.heading && !item.submenu && item.elink" [attr.target]="item.target" [attr.href]="item.elink" title="{{item.text | translate}}">
+                    <span class="float-right" *ngIf="item.alert" [ngClass]="item.label || 'badge badge-success'">{{item.alert}}</span>
+                    <ion-icon name="{{item.icon}}" *ngIf="item.icon" class="icon"></ion-icon>
+                    <span>{{(item.translate | translate) || item.text | translate}}</span>
+                </a>
+
+                <!-- single menu item -->
+
+                <a href *ngIf="!item.heading && !item.submenu && !item.elink" [routerLink]="item.link" [attr.route]="item.link" title="{{item.text | translate}}" (click)="toggleSubmenuClick($event)">
+                    <span class="float-right" *ngIf="item.alert" [ngClass]="item.label || 'badge badge-success'">{{item.alert}}</span>
+                      <ion-icon name="{{item.icon}}" *ngIf="item.icon && item.icon !='support'" class="icon"></ion-icon>
+                    <span>{{(item.translate | translate) || item.text | translate}}</span>
+                </a>
+                <hr *ngIf="i  == 1" class="mx-auto">
+                <div class="Rectangle-24"></div>
+              
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- END Sidebar (left)-->

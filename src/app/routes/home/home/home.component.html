@@ -1,0 +1,67 @@
+<div class="home-container pt-28">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 dashboard-padding">
+        <div class="row top-box mb-20">
+            <div class="col-6" style="margin-top: -3px !important;">
+                <strong class="title-portal">Dashboard</strong>
+            </div>
+            <div class="col-6">
+                <div class="perfil">
+                    <app-dropdown-menu></app-dropdown-menu>
+                </div>
+            </div>
+            <div class="col-12 mt-3">
+                <button 
+                    class="btn btn-sm btn-primary m-1 btn-oval" type="button" (click)="(openCreateTrainingModal())"
+                    title="{{ 'Adicionar Ficha' | translate }}">
+                    Cadastrar Ficha
+                </button>
+            </div>
+        </div>
+        <div class="row mb-20 mt-5">
+            <div class="col-12">
+                <div *ngFor="let trainingPlan of TrainingPlans; let index = index">
+                    <div class="card-custom-card card-body border-radius-10px mt-4 borda-cards">
+                        <h3 class="col-4">Ficha de Treino</h3>
+                        <div class="btns">
+                            <button 
+                                class="btn btn-sm btn-primary m-1 btn-oval" type="button" 
+                                title="{{ 'Adicionar Ficha' | translate }}" (click)="openAddExerciseModal(trainingPlan)">
+                                Adicionar Exercício
+                            </button>
+                            <button 
+                                class="btn btn-sm btn-danger m-1 btn-oval" type="button" (click)="onDeleteTraningPlan(trainingPlan.id)" 
+                                title="{{ 'DELETE' | translate }}">
+                                {{ 'DELETE' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-12 mt-3 mb-3">
+                            <h4>{{trainingPlan?.plannedExercises?.length == 0 ? 'Nenhum Exercício adicionado' : 'Exercicios'}}</h4>
+                            <div  *ngFor="let plannedExercise of trainingPlan.plannedExercises" >
+                                <app-card
+                                    [id]="plannedExercise.id"
+                                    [name]="plannedExercise.exercise.name"
+                                    [description]="plannedExercise.exercise.description"
+                                    [sets]="plannedExercise.sets"
+                                    [repetitions]="plannedExercise.repetitions"
+                                    [imgUrl]="plannedExercise.exercise.imgUrl"
+                                    [weight]="plannedExercise.weight"
+                                    (onDelete)="onDeletePlanExercise($event, plannedExercise.trainingPlanId)"
+                                    [deleteEnabled]='trainingPlan?.plannedExercises?.length > 1'
+                                >
+                                </app-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="text-align: center;">
+            <div class="no-item mt-5" *ngIf="TrainingPlans?.length == 0">
+                <span class="fs-6" style="color: gray;">
+                    <em class="fa-2x mr-2 fas fa-exclamation-triangle mb-2"></em>
+                    <p>{{'NOT_ITEM'| translate}}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

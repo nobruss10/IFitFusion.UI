@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Exercício</h4>
+    <button type="button" class="close close-custom " aria-label="Close" (click)="bsModalRef.hide()"> 
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body p-0">
+    <div class="card-body p-0">
+        <div class="card-body  pl-4 pr-4">
+           <app-exercise (OnAdd)="onAddExercise($event)"></app-exercise>
+        </div>
+         <!-- END row-->
+    </div>
+</div>
+<div class="modal-footer">
+
+</div>

@@ -1,0 +1,76 @@
+@import '../../shared/styles/app/variables.scss';
+
+$sidebar-item-color:      #e68b61;
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand {
+    margin: auto;
+    img{
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+}
+
+a {
+    ion-icon{
+        color:$neutral-300;
+        font-size: 28px;
+    }
+}
+.sidebar-nav > li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-nav > li :hover {
+    color: $sidebar-item-color;
+}
+
+.sidebar-nav > li.active, 
+.sidebar-nav > li.active{
+    .Rectangle-24 {
+        background-color: $orange-100;
+    }
+}
+.Rectangle-24 {
+    width: 5px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 3px;
+}
+
+.sidebar > .sidebar-nav > li > a, .aside-collapsed-text .sidebar > .sidebar-nav > li > .nav-item {
+    text-indent: -3px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    
+}
+hr{
+    margin: 80px;
+    position: absolute;
+    margin-bottom: 0;
+    border-top:2px solid $neutral-300;
+    width: 30px;
+    top: 0;
+}
+
+

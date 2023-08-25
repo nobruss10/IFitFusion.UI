@@ -1,0 +1,32 @@
+@import '../styles/app/variables.scss';
+.customClass{
+  border:none!important;
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    color: $neutral-300;
+    border:none!important;
+    font-family: 'Inter-Regular';
+
+  }
+  .nav-link{
+    font-family: 'Inter-Regular';
+    border:none!important;
+    background-color: transparent!important;
+    padding:0!important;
+    padding-bottom:7px!important;
+    span{
+      padding-bottom: 7px;
+      font-size: 16px!important;
+      font-weight: 500!important;
+      color:$neutral-300!important;
+    }
+    &.active{
+      span{
+        color:$neutral-400!important;
+        border-bottom: 2px solid $orange-100!important;
+      }
+    
+    }
+  }
+}

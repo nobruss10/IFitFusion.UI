@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <app-sidebar class="aside-container" ></app-sidebar>
+    <section class="section-container" id="content-principal">
+        <div class="content-wrapper px-0 py-0" id="template-route"  [ngClass]="'content-wrapper content-wrapper-full'">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+    <app-feed class="feed-container feed-padding" *ngIf="false"></app-feed>
+</div>
