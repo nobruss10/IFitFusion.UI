@@ -9,7 +9,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build:staging": "ng build --prod --configuration=staging --aot=false --build-optimizer=false --output-hashing=all",
-    "build:production": "ng build --prod --configuration=production --aot=false --build-optimizer=false --output-hashing=all",
+    "build:production": "set \"CI=false\" && ng build --prod --configuration=production --aot=false --build-optimizer=false --output-hashing=all",
     "build:dev": "ng build --prod --configuration=dev --aot=false --build-optimizer=false --output-hashing=all",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
