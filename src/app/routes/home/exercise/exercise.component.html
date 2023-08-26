@@ -27,15 +27,14 @@
                 <div class="container-fluid p-0">
                     <div class="jumbotron">
                         <div class="row">
-                            <div class="col-xl-3 col-lg-4">
+                            <div class="col-xl-3 col-lg-4 mb-3">
                                 <div class="text-center">
                                     <img alt="Angular" class="img-fluid home-logo" src="{{exercise?.imgUrl}}" onerror="this.src='assets/img/icons/no-image-icon.svg'" />
                                 </div>
                             </div>
                             <div class="col-xl-9 col-lg-8">
-                                <h1 class="home-text-big">{{exercise?.name}}</h1>
-                                <p class="lead">{{exercise?.description}} </p>
-                                <!-- <p style="text-align: end;"><button class="btn btn-primary btn-lg mt-3"  type="submit" (click)="add()">Adicionar</button></p> -->
+                                <h1 class="text-name">{{exercise?.name}}</h1>
+                                <p class="text-description lead">{{exercise?.description}} </p>
                             </div>
                         </div>
                     </div>

@@ -37,11 +37,6 @@
 }
 
 .btns{
-    width: 271px;
-    position: absolute;
-    right: 22px;
-    top: 20px;
-    padding: 1px;
     text-align: end;
 }
 
@@ -49,8 +44,15 @@
     border-radius: 100%;
 }
 
+.title-portal {
+    display: block;
+}
+
 @media only screen and (max-width: 777px) {
     .home-container {
         max-width: 100%;
+    }
+    .title-portal {
+        display: none;
     }
 }
